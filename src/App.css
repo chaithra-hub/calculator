@@ -3,36 +3,146 @@
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: rgb(31, 32, 32);
+  height: 150px;
+  padding: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+#root{
+  background: rgba(93, 166, 235, 0.884);
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.calculator--container{
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  width: 520px;
+  background: rgb(245, 243, 243);
+  border-radius: 5%;
+  box-shadow: rgba(231, 25, 231, 0.267);
+}
+
+.screen--container{
+  flex: 0.5;
+  flex: 0.5 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.screen-bottom, .screen-top {
+  text-align: right;
+  color: rgb(90, 165, 235);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.screen-top{
+  flex: 1;
+  font-size: 40px;
+  width: 90%;
+  align-self: flex-end;
+}
+
+.screen-bottom{
+  flex: 2;
+  font-size: 200px;
+  width: 80%;
+  align-self: flex-end;
+}
+
+.keypad{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.block{
+  flex: 1;
+  display: flex;
+}
+
+.btn{
+  flex: 1;
+  border-radius: 50%;
+  margin: 5px;
+  border: none;
+  background: #171717;
+  color: white;
+  font-size: 45px;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn--zero{
+  flex: 2;
+  border-radius: 95px/80px;
+  align-items: end;
+  display: flex;
+  padding-left: 50px;
+}
+
+.btn--orange{
+  background: #47afdf
+}
+
+.btn--grey{
+  background: #0c0c0c;
+  color: rgb(245, 243, 243);
+}
+
+
+@media all and (max-width: 530px) {
+  .btn {
+    font-size: 32px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .calculator--container{
+    width: 420px;
+  }
+
+  .btn--zero{
+    padding-left: 40px
+  }
+
+  .keypad{
+    flex: 0.6 0.5;
+  }
+}
+
+@media all and (max-width: 420px) {
+  .btn {
+    font-size: 25px;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .calculator--container{
+    /* height: 70vh; */
+    width: 315px;
   }
 }
